@@ -194,9 +194,20 @@ class Student extends Lambdasian {
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
-   
+class ProjectManager extends Instructor {
+   constructor(mgrAttrs) {
+     super(mgrAttrs);
+     this.gradClassName = mgrAttrs.gradClassName;
+     this.favInstructor = mgrAttrs.favInstructor;
+   }
+   standUp(channel) {
+     return `${this.name} announces to ${channel}, @${channel} standby times!`;
+   }
+   debugsCode(student, subject) {
+     return `${this.name} debugs ${student.name}'s code on ${subject}`;
+   }
 }
+
 /*
   STRETCH PROBLEM (no tests!)
     - Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
