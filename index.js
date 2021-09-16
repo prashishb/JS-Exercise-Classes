@@ -133,9 +133,21 @@ class Lambdasian {
         + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
-class Instructor {
-
+class Instructor extends Lambdasian{
+  constructor(instructorAttrs) {
+    super(instructorAttrs);
+    this.specialty = instructorAttrs.specialty;
+    this.favLanguage = instructorAttrs.favLanguage;
+    this.catchPhrase = instructorAttrs.catchPhrase;
+  }
+  demo(subject) {
+    return `Today we are learning about ${subject}`
+  }
+  grade(student, subject) {
+    return `${student} receives a perfect score on ${subject}`
+  }
 }
+
 /*
   TASK 5
     - Write a Student class extending Lambdasian.
